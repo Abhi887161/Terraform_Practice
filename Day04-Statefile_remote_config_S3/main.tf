@@ -18,3 +18,7 @@ resource "aws_subnet" "UAT" {
 }
 
 
+resource "aws_subnet" "prod" {
+    cidr_block = "10.0.6.0/24"
+    vpc_id = aws_vpc.dev.id
+}
