@@ -12,3 +12,9 @@ resource "aws_subnet" "test" {
     vpc_id = aws_vpc.dev.id
 }
 
+resource "aws_subnet" "UAT" {
+    cidr_block = "10.0.7.0/24"
+    vpc_id = aws_vpc.dev.id
+}
+
+
