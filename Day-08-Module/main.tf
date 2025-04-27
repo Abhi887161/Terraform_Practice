@@ -1,12 +1,6 @@
-resource "aws_instance" "name" {
+resource "aws_instance" "dev" {
 
-    ami = var.ami
-    instance_type = var.instance_type
-  
-
-
-    tags = {
-      Name = "dev"
-    }
-  
+   ami = var.ami
+   instance_type = var.instance_type
+ 
 }
