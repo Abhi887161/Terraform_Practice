@@ -85,7 +85,7 @@ resource "null_resource" "setup_and_upload" {
       "sudo mkdir -p /var/www/html/",
 
       # Create a sample index.html file
-      "echo '<h1>Welcome to My Web Server</h1>' | sudo tee /var/www/html/index.html",
+      "echo '<h1>Welcome to My Null Resource Server</h1>' | sudo tee /var/www/html/index.html",
 
       # Upload the file to S3
       "aws s3 cp /var/www/html/index.html s3://dynamodbtestmain/",
@@ -101,6 +101,6 @@ resource "null_resource" "setup_and_upload" {
   }
 
   triggers = {
-    instance_id = aws_instance.web_server.id
+    instance_type = aws_instance.web_server.instance_type
   }
 }
