@@ -55,6 +55,7 @@ resource "aws_iam_instance_profile" "ec2_instance_profile" {
 
 }
 
+
 # EC2 instance with IAM instance profile attached
 resource "aws_instance" "web_server" {
   ami                  = "ami-0f1dcc636b69a6438" # Update with a valid AMI ID
@@ -104,3 +105,9 @@ resource "null_resource" "setup_and_upload" {
     instance_type = aws_instance.web_server.instance_type
   }
 }
+
+
+
+
+
+
